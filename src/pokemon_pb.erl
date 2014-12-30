@@ -199,8 +199,6 @@ reverse_repeated_fields(FieldList, Types) ->
           end
       end || {FNum, Name, Value}=Field <- FieldList ].
 
-unpack_value(Binary, string) when is_binary(Binary) ->
-    binary_to_list(Binary);
 unpack_value(Value, _) -> Value.
 
 to_record(pikachu, DecodedTuples) ->

@@ -84,10 +84,10 @@ prop_string() ->
 encode_string_test_() ->
     [?_assertMatch(<<18, 7, 116, 101, 115, 116, 105, 110,
 		     103>>,
-		   (?ENCODE(2, "testing", string)))].
+		   (?ENCODE(2, <<"testing">>, string)))].
 
 decode_string_test_() ->
-    [?_assertMatch({{2, "testing"}, <<>>},
+    [?_assertMatch({{2, <<"testing">>}, <<>>},
 		   (?DECODE(<<18, 7, 116, 101, 115, 116, 105, 110, 103>>,
 			    string)))].
 
